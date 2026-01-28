@@ -8,6 +8,16 @@
     object-fit: cover;
     filter: brightness(0.6); /* escurece para destacar o login */
 }
+.login-box {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 420px;
+    margin: auto;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+``
 :root { --bg:#0f172a; --card:#111827; --fg:#e5e7eb; --muted:#94a3b8; --accent:#22d3ee; --danger:#ef4444 }
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;background:var(--bg);color:var(--fg)}
