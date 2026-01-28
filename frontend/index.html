@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Central de Chamados</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Central de Chamados</h1>
+
+    <section id="auth">
+      <div class="card">
+        <h2>Entrar</h2>
+        <form id="loginForm">
+          <input name="email" type="email" placeholder="E-mail" required />
+          <input name="password" type="password" placeholder="Senha" required />
+          <button type="submit">Login</button>
+        </form>
+        <p class="muted">Ainda não tem conta? <a href="#" id="showRegister">Criar conta</a></p>
+      </div>
+
+      <div class="card hidden" id="registerCard">
+        <h2>Criar conta</h2>
+        <form id="registerForm">
+          <input name="name" placeholder="Nome" required />
+          <input name="email" type="email" placeholder="E-mail" required />
+          <input name="password" type="password" placeholder="Senha (mín. 6)" required />
+          <button type="submit">Registrar</button>
+        </form>
+        <p class="muted"><a href="#" id="showLogin">Voltar ao login</a></p>
+      </div>
+    </section>
+
+    <section id="app" class="hidden">
+      <div class="topbar">
+        <div>
+          Logado como <span id="meName"></span> (<span id="meRole"></span>)
+        </div>
+        <button id="logoutBtn">Sair</button>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Novo chamado</h3>
+          <form id="newTicketForm">
+            <input name="title" placeholder="Título" required />
+            <textarea name="content" placeholder="Descreva o problema" required></textarea>
+            <label>Prioridade
+              <select name="priority">
+                <option value="P1">P1 - Crítica (30min)</option>
+                <option value="P2">P2 - Alta (1h)</option>
+                <option value="P3" selected>P3 - Normal (8h)</option>
+              </select>
+            </label>
+            <button type="submit">Abrir chamado</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Chamados</h3>
+          <table id="ticketsTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Status</th>
+                <th>Prioridade</th>
+                <th>Solicitante</th>
+                <th>Responsável</th>
+                <th>Vencimento</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" id="ticketDetail" class="hidden" style="display:none"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

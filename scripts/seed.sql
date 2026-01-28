@@ -1,0 +1,2 @@
+-- Opcional: tornar um usuário agent (substitua o e-mail)
+-- update users set role='agent' where email='atendente@empresa.com';
